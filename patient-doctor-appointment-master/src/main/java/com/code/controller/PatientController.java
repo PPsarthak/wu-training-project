@@ -30,6 +30,11 @@ public class PatientController {
 
 	@Autowired
 	PatientService patientService;
+	
+	@GetMapping()
+	public String hello() {
+		return "Hello, Patient Service";
+	}
 
 	@GetMapping("/patients")
 	public List<Patient> getPatientList() {

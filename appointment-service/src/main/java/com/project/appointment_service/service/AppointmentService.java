@@ -40,6 +40,9 @@ public class AppointmentService {
 	@Autowired
 	private PatientServiceFeignClient patientServiceFeignClient;
 	
+	@Autowired
+	private KafkaProducerService kafkaProducerService;
+	
 	public Appointment getAppointmentById(Long id) {
 		return appointmentRepository.findById(id).orElseThrow(
 				() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "Appointment does not exists"));
@@ -69,6 +72,7 @@ public class AppointmentService {
 			
 			Appointment savedAppointment = appointmentRepository.save(appointment);
 			//TODO- Kafka: Send this savedAppointment to doctor-service and patient-service
+			kafkaProducerService.confirmAppointment("Appointment is booked successfully with appointmentId: " + savedAppointment.getId());
 			
 			return savedAppointment;
 		}

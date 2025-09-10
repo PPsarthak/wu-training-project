@@ -12,9 +12,9 @@
 	</parent>
 
 	<groupId>com.code</groupId>
-	<artifactId>ms-springboot-patient-doctor-appointment</artifactId>
+	<artifactId>patient-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ms-springboot-patient-doctor-appointment</name>
+	<name>patient-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
