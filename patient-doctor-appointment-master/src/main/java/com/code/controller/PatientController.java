@@ -22,6 +22,8 @@ import com.code.entity.Patient;
 import com.code.exception.ResourceNotFoundException;
 import com.code.service.PatientService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/papi")
 public class PatientController {
@@ -53,7 +55,7 @@ public class PatientController {
 //	    }
 
 	@PostMapping("/patient")
-	public Patient savePatient(@RequestBody Patient patient) {
+	public Patient savePatient(@Valid @RequestBody Patient patient) {
 		return patientService.createPatient(patient);
 
 	}

@@ -1,0 +1,3542 @@
+{
+	"info": {
+		"_postman_id": "70f8b814-0a08-44cd-a349-5167d9297ae8",
+		"name": "Training WU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40723585"
+	},
+	"item": [
+		{
+			"name": "Doctor Service",
+			"item": [
+				{
+					"name": "POST Doctor",
+					"item": [
+						{
+							"name": "ADD Doctor 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"\r",
+											"if (response && response.id) {\r",
+											"    pm.environment.set(\"doctorId_1\", response.id);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Dr. One\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"doctor_one@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"fullName\": \"Dr. One\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"doctor_one@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:09:39 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 955,\n    \"fullName\": \"Dr. One\",\n    \"specialty\": \"Cardiology\",\n    \"email\": \"doctor_one@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Pune\",\n    \"workingHours\": [\n        {\n            \"workingId\": 966,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 967,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 968,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 969,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "ADD Doctor 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"\r",
+											"if (response && response.id) {\r",
+											"    pm.environment.set(\"doctorId_2\", response.id);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Dr. Two\",\r\n  \"specialty\": \"Neurologist\",\r\n  \"email\": \"doctor_two@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Delhi\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"TUESDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"11:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"THURSDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"fullName\": \"Dr. Two\",\r\n  \"specialty\": \"Neurologist\",\r\n  \"email\": \"doctor_two@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Delhi\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"TUESDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"11:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"THURSDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:09:57 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 956,\n    \"fullName\": \"Dr. Two\",\n    \"specialty\": \"Neurologist\",\n    \"email\": \"doctor_two@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Delhi\",\n    \"workingHours\": [\n        {\n            \"workingId\": 970,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 971,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 972,\n            \"dayOfWeek\": \"TUESDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 973,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"11:00:00\",\n            \"endTime\": \"15:00:00\"\n        },\n        {\n            \"workingId\": 974,\n            \"dayOfWeek\": \"THURSDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 975,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET Doctor",
+					"item": [
+						{
+							"name": "GET Doctor 1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{doctorId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:06:52 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 953,\n    \"fullName\": \"Dr. One\",\n    \"specialty\": \"Cardiology\",\n    \"email\": \"doctor_one@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Pune\",\n    \"workingHours\": [\n        {\n            \"workingId\": 956,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 957,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 958,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 959,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "204 No Content",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}10"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:43:31 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "GET Doctor 2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{doctorId_2}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_2}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:07:20 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 954,\n    \"fullName\": \"Dr. Two\",\n    \"specialty\": \"Neurologist\",\n    \"email\": \"doctor_two@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Delhi\",\n    \"workingHours\": [\n        {\n            \"workingId\": 960,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 961,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 962,\n            \"dayOfWeek\": \"TUESDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 963,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"11:00:00\",\n            \"endTime\": \"15:00:00\"\n        },\n        {\n            \"workingId\": 964,\n            \"dayOfWeek\": \"THURSDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 965,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "204 No Content",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_2}}1"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:44:05 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PUT Doctor",
+					"item": [
+						{
+							"name": "PUT Doctor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fullName\": \"Dr. One - PUT Update\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"doctor_one@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{doctorId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"fullName\": \"Dr. One - PUT Update\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"doctor_one@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:47:41 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 955,\n    \"fullName\": \"Dr. One - PUT Update\",\n    \"specialty\": \"Cardiology\",\n    \"email\": \"doctor_one@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Pune\",\n    \"workingHours\": [\n        {\n            \"workingId\": 1952,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 1953,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 1954,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 1955,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "400 Doctor does not exists",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"fullName\": \"Dr. One - PUT Update\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"doctor_one@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"15:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}99"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:48:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:48:02.698+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Doctor does not exists\\\"\\r\\n\\tat com.project.doctor_service.service.DoctorService.lambda$2(DoctorService.java:60)\\r\\n\\tat java.base/java.util.Optional.orElseThrow(Optional.java:403)\\r\\n\\tat com.project.doctor_service.service.DoctorService.updateDoctor(DoctorService.java:59)\\r\\n\\tat com.project.doctor_service.controller.DoctorController.updateDoctor(DoctorController.java:42)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Doctor does not exists\",\n    \"path\": \"/dapi/doctors/95599\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PATCH Doctor",
+					"item": [
+						{
+							"name": "PATCH Doctor",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"specialty\": \"Cardiology - PATCH Update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{doctorId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"specialty\": \"Cardiology - PATCH Update\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:49:49 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 955,\n    \"fullName\": \"Dr. One - PUT Update\",\n    \"specialty\": \"Cardiology - PATCH Update\",\n    \"email\": \"doctor_one@example.com\",\n    \"phone\": \"+91-9876543210\",\n    \"locations\": \"Mumbai, Pune\",\n    \"workingHours\": [\n        {\n            \"workingId\": 1952,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"09:00:00\",\n            \"endTime\": \"13:00:00\"\n        },\n        {\n            \"workingId\": 1953,\n            \"dayOfWeek\": \"MONDAY\",\n            \"startTime\": \"15:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 1954,\n            \"dayOfWeek\": \"WEDNESDAY\",\n            \"startTime\": \"14:00:00\",\n            \"endTime\": \"18:00:00\"\n        },\n        {\n            \"workingId\": 1955,\n            \"dayOfWeek\": \"FRIDAY\",\n            \"startTime\": \"10:00:00\",\n            \"endTime\": \"15:00:00\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "400 Doctor does not exists",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"specialty\": \"Cardiology - PATCH Update\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}87"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:50:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:50:08.366+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Doctor does not exists\\\"\\r\\n\\tat com.project.doctor_service.service.DoctorService.lambda$4(DoctorService.java:85)\\r\\n\\tat java.base/java.util.Optional.orElseThrow(Optional.java:403)\\r\\n\\tat com.project.doctor_service.service.DoctorService.patchDoctor(DoctorService.java:84)\\r\\n\\tat com.project.doctor_service.controller.DoctorController.patchDoctor(DoctorController.java:47)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Doctor does not exists\",\n    \"path\": \"/dapi/doctors/95587\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "DEL Doctor",
+					"item": [
+						{
+							"name": "DEL Doctor",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+									"host": [
+										"{{DOCTOR_SERVICE}}"
+									],
+									"path": [
+										"doctors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{doctorId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "7"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:51:01 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Deleted"
+								},
+								{
+									"name": "204 No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{DOCTOR_SERVICE}}/doctors/:id",
+											"host": [
+												"{{DOCTOR_SERVICE}}"
+											],
+											"path": [
+												"doctors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{doctorId_1}}"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:52:02 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Patient Service",
+			"item": [
+				{
+					"name": "POST Patient",
+					"item": [
+						{
+							"name": "Add Patient 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json(); \r",
+											"\r",
+											"if (response && response.id) { \r",
+											"    pm.environment.set(\"patientId_1\", response.id); \r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Patient 1\",\r\n    \"email\": \"patient_1@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Patient 1\",\r\n    \"email\": \"patient_1@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:14:29 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"fullName\": \"Patient 1\",\n    \"email\": \"patient_1@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2003-02-12\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Patient 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json(); \r",
+											"\r",
+											"if (response && response.id) { \r",
+											"    pm.environment.set(\"patientId_2\", response.id); \r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Patient 2\",\r\n    \"email\": \"patient_2@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2000-12-05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Patient 2\",\r\n    \"email\": \"patient_2@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2000-12-05\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:15:53 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1953,\n    \"fullName\": \"Patient 2\",\n    \"email\": \"patient_2@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2000-12-05\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Add Patient 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json(); \r",
+											"\r",
+											"if (response && response.id) { \r",
+											"    pm.environment.set(\"patientId_3\", response.id); \r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Patient 3\",\r\n    \"email\": \"patient_3@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2004-09-14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9393/papi/patient",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9393",
+									"path": [
+										"papi",
+										"patient"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Patient 3\",\r\n    \"email\": \"patient_3@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2004-09-14\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:9393/papi/patient",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "9393",
+											"path": [
+												"papi",
+												"patient"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:16:54 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1954,\n    \"fullName\": \"Patient 3\",\n    \"email\": \"patient_3@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2004-09-14\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET Patient",
+					"item": [
+						{
+							"name": "GET Patient 1",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:17:40 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"fullName\": \"Patient 1\",\n    \"email\": \"patient_1@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2003-02-12\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}10"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:58:12 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:58:12.701+00:00\",\n    \"message\": \"Patient not found for this id :: 195210\",\n    \"details\": \"uri=/papi/patient/195210\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GET Patient 2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_2}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_2}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:18:08 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1953,\n    \"fullName\": \"Patient 2\",\n    \"email\": \"patient_2@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2000-12-05\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_2}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:58:48 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:58:48.513+00:00\",\n    \"message\": \"Patient not found for this id :: 195399\",\n    \"details\": \"uri=/papi/patient/195399\"\n}"
+								}
+							]
+						},
+						{
+							"name": "GET Patient 3",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_3}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_3}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:18:47 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1954,\n    \"fullName\": \"Patient 3\",\n    \"email\": \"patient_3@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2004-09-14\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_3}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:59:08 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:59:08.437+00:00\",\n    \"message\": \"Patient not found for this id :: 195400\",\n    \"details\": \"uri=/papi/patient/195400\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PUT Patient",
+					"item": [
+						{
+							"name": "PUT Patient",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"Patient 1 - PUT Updated\",\r\n    \"email\": \"patient_1@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Patient 1 - PUT Updated\",\r\n    \"email\": \"patient_1@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:00:29 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"fullName\": \"Patient 1 - PUT Updated\",\n    \"email\": \"patient_1@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2003-02-12\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"Patient 1 - PUT Updated\",\r\n    \"email\": \"patient_1@gmail.com\",\r\n    \"phone\": \"1234567890\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:00:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:00:46.133+00:00\",\n    \"message\": \"Patient not found for this id :: 1952456\",\n    \"details\": \"uri=/papi/patient/1952456\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PATCH Patient",
+					"item": [
+						{
+							"name": "PATCH Patient",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"patient_1_PATCH_UPDATED_@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"patient_1_PATCH_UPDATED_@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:02:26 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"fullName\": \"Patient 1 - PUT Updated\",\n    \"email\": \"patient_1_PATCH_UPDATED_@gmail.com\",\n    \"phone\": \"1234567890\",\n    \"dob\": \"2003-02-12\"\n}"
+								},
+								{
+									"name": "404 Not Found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"patient_1_PATCH_UPDATED_@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:02:42 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:02:42.942+00:00\",\n    \"message\": \"Patient not found for this id :: 195265\",\n    \"details\": \"uri=/papi/patient/195265\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "DEL Patient",
+					"item": [
+						{
+							"name": "DEL Patient",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient/:id",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{patientId_1}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient/:id",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{patientId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "7"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:04:14 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "Deleted"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Failing Validations",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\": \"pawan-Valid\",\r\n    \"email\": \"pssj#gmgjacom\",\r\n    \"phone\": \"9876543210\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PATIENT_SERVICE}}/patient",
+									"host": [
+										"{{PATIENT_SERVICE}}"
+									],
+									"path": [
+										"patient"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Phone number must be 10 digit",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"pawan-Valid\",\r\n    \"email\": \"pssj@gmgja.com\",\r\n    \"phone\": \"+9177373722134567882\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:19:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:19:09.003+00:00\",\n    \"message\": \"Validation failed for argument [0] in public com.code.entity.Patient com.code.controller.PatientController.savePatient(com.code.entity.Patient): [Field error in object 'patient' on field 'phone': rejected value [+9177373722134567882]; codes [Pattern.patient.phone,Pattern.phone,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.phone,phone]; arguments []; default message [phone],[Ljakarta.validation.constraints.Pattern$Flag;@24710941,\\\\d{10}]; default message [Phone number must be 10 digit]] \",\n    \"details\": \"uri=/papi/patient\"\n}"
+								},
+								{
+									"name": "Email should be valid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"pawan-Valid\",\r\n    \"email\": \"pssjgmgjacom\",\r\n    \"phone\": \"9876543210\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:20:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:20:40.902+00:00\",\n    \"message\": \"Validation failed for argument [0] in public com.code.entity.Patient com.code.controller.PatientController.savePatient(com.code.entity.Patient): [Field error in object 'patient' on field 'email': rejected value [pssjgmgjacom]; codes [Email.patient.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@59c9db87,.*]; default message [Email should be valid]] \",\n    \"details\": \"uri=/papi/patient\"\n}"
+								},
+								{
+									"name": "Full name must be between 2 and 100 characters",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"p\",\r\n    \"email\": \"pssjgmgjacom\",\r\n    \"phone\": \"9876543210\",\r\n    \"dob\": \"2003-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:21:13 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:21:13.911+00:00\",\n    \"message\": \"Validation failed for argument [0] in public com.code.entity.Patient com.code.controller.PatientController.savePatient(com.code.entity.Patient) with 2 errors: [Field error in object 'patient' on field 'email': rejected value [pssjgmgjacom]; codes [Email.patient.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@59c9db87,.*]; default message [Email should be valid]] [Field error in object 'patient' on field 'fullName': rejected value [p]; codes [Size.patient.fullName,Size.fullName,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.fullName,fullName]; arguments []; default message [fullName],100,2]; default message [Full name must be between 2 and 100 characters]] \",\n    \"details\": \"uri=/papi/patient\"\n}"
+								},
+								{
+									"name": "Date of birth must be in the past",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullName\": \"pawan-Valid\",\r\n    \"email\": \"pssj@gmgja.com\",\r\n    \"phone\": \"9876543210\",\r\n    \"dob\": \"2026-02-12\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PATIENT_SERVICE}}/patient",
+											"host": [
+												"{{PATIENT_SERVICE}}"
+											],
+											"path": [
+												"patient"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 14:22:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T14:22:02.630+00:00\",\n    \"message\": \"Validation failed for argument [0] in public com.code.entity.Patient com.code.controller.PatientController.savePatient(com.code.entity.Patient): [Field error in object 'patient' on field 'dob': rejected value [2026-02-12]; codes [Past.patient.dob,Past.dob,Past.java.time.LocalDate,Past]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [patient.dob,dob]; arguments []; default message [dob]]; default message [Date of birth must be in the past]] \",\n    \"details\": \"uri=/papi/patient\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Appointment Service",
+			"item": [
+				{
+					"name": "POST Appointment",
+					"item": [
+						{
+							"name": "Add Appointment 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json(); \r",
+											"\r",
+											"if (response && response.id) { \r",
+											"    pm.environment.set(\"appId_1_test\", response.id); \r",
+											"}\r",
+											"\r",
+											"if (response && response.startDate) { \r",
+											"    pm.environment.set(\"appId_1_startDate_test\", response.startDate); \r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"startDate\": \"2025-09-03T14:30:00\",\r\n  \"notes\": \"Follow-up\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"startDate\": \"2025-09-03T15:30:00\",\r\n  \"endDate\": \"2025-09-03T16:30:00\",\r\n  \"status\": \"BOOKED\",\r\n  \"notes\": \"Follow-up\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:21:50 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"doctorId\": 955,\n    \"patientId\": 1952,\n    \"startDate\": \"2025-09-03T15:30:00\",\n    \"endDate\": \"2025-09-03T16:30:00\",\n    \"status\": \"BOOKED\",\n    \"notes\": \"Follow-up\"\n}"
+								},
+								{
+									"name": "400 Doctor DNE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"doctorId\": {{doctorId_1}}10,\r\n  \"patientId\": {{patientId_1}},\r\n  \"startDate\": \"2025-09-03T14:30:00\",\r\n  \"notes\": \"Follow-up\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:29:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:29:30.201+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Doctor Id does not exists\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.addAppointment(AppointmentService.java:52)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)\\r\\n\\tat com.project.appointment_service.service.AppointmentService$$SpringCGLIB$$0.addAppointment(<generated>)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.addAppointment(AppointmentController.java:42)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Doctor Id does not exists\",\n    \"path\": \"/aapi/appointments\"\n}"
+								},
+								{
+									"name": "400 Slot already booked",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"startDate\": \"2025-09-03T14:30:00\",\r\n  \"notes\": \"Follow-up\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:30:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:29:59.995+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Booking Slot is already filled\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.addAppointment(AppointmentService.java:76)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)\\r\\n\\tat com.project.appointment_service.service.AppointmentService$$SpringCGLIB$$0.addAppointment(<generated>)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.addAppointment(AppointmentController.java:42)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Booking Slot is already filled\",\n    \"path\": \"/aapi/appointments\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET Appointment",
+					"item": [
+						{
+							"name": "GET Appointment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{appId_1_test}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:48:59 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"doctorId\": 955,\n    \"patientId\": 1952,\n    \"startDate\": \"2025-09-03T15:30:00\",\n    \"endDate\": \"2025-09-03T16:30:00\",\n    \"status\": \"BOOKED\",\n    \"notes\": \"Follow-up\"\n}"
+								},
+								{
+									"name": "204 NC",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}10"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:27:37 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "DEL Appointment",
+					"item": [
+						{
+							"name": "DEL Appointment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{appId_1_test}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Sep 2025 14:59:25 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 2152,\n    \"doctorId\": 955,\n    \"patientId\": 1952,\n    \"startDate\": \"2025-09-03T14:30:00\",\n    \"endDate\": \"2025-09-03T15:00:00\",\n    \"status\": \"CANCELLED\",\n    \"notes\": \"Follow-up\"\n}"
+								},
+								{
+									"name": "400 Already Cancelled/Completed",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:33:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:33:17.831+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Appointment is not scheduled\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.deleteAppointmentById(AppointmentService.java:83)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)\\r\\n\\tat com.project.appointment_service.service.AppointmentService$$SpringCGLIB$$0.deleteAppointmentById(<generated>)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.deleteAppointmentById(AppointmentController.java:47)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Appointment is not scheduled\",\n    \"path\": \"/aapi/appointments/2152\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Complete Appointment",
+					"item": [
+						{
+							"name": "Complete Appointment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{appId_1_test}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 06:54:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 2152,\n    \"doctorId\": 955,\n    \"patientId\": 1952,\n    \"startDate\": \"2025-09-03T14:30:00\",\n    \"endDate\": \"2025-09-03T15:00:00\",\n    \"status\": \"COMPLETED\",\n    \"notes\": \"Follow-up\"\n}"
+								},
+								{
+									"name": "Appointment already completed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 06:55:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T06:55:21.051+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Appointment already completed\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.completeAppointment(AppointmentService.java:91)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.completeAppointment(AppointmentController.java:54)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Appointment already completed\",\n    \"path\": \"/aapi/appointments/2152\"\n}"
+								},
+								{
+									"name": "Appointment DNE",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/:id",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}4"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 06:56:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T06:56:10.412+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Appointment does not exists\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.lambda$completeAppointment$0(AppointmentService.java:89)\\r\\n\\tat java.base/java.util.Optional.orElseThrow(Optional.java:403)\\r\\n\\tat com.project.appointment_service.service.AppointmentService.completeAppointment(AppointmentService.java:88)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.completeAppointment(AppointmentController.java:54)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Appointment does not exists\",\n    \"path\": \"/aapi/appointments/21524\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Availability",
+					"item": [
+						{
+							"name": "Get Available Slots",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/availability?doctorId={{doctorId_1}}&date={{appId_1_startDate_test}}",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"availability"
+									],
+									"query": [
+										{
+											"key": "doctorId",
+											"value": "{{doctorId_1}}"
+										},
+										{
+											"key": "date",
+											"value": "{{appId_1_startDate_test}}"
+										},
+										{
+											"key": "date",
+											"value": "2025-09-09T14:30:00",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/availability?doctorId={{doctorId_1}}&date={{appId_1_startDate_test}}",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"availability"
+											],
+											"query": [
+												{
+													"key": "doctorId",
+													"value": "{{doctorId_1}}"
+												},
+												{
+													"key": "date",
+													"value": "{{appId_1_startDate_test}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 07:18:32 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    \"14:00:00\",\n    \"14:30:00\",\n    \"15:00:00\",\n    \"15:30:00\",\n    \"16:00:00\",\n    \"16:30:00\",\n    \"17:00:00\",\n    \"17:30:00\"\n]"
+								},
+								{
+									"name": "400 Doctor DNE",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/availability?doctorId={{doctorId_1}}10&date={{appId_1_startDate_test}}",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"availability"
+											],
+											"query": [
+												{
+													"key": "doctorId",
+													"value": "{{doctorId_1}}10"
+												},
+												{
+													"key": "date",
+													"value": "{{appId_1_startDate_test}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:35:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T13:35:44.102+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Doctor does not exists\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.getAvailableSlots(AppointmentService.java:107)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)\\r\\n\\tat com.project.appointment_service.service.AppointmentService$$SpringCGLIB$$0.getAvailableSlots(<generated>)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.getAvailableSlot(AppointmentController.java:64)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Doctor does not exists\",\n    \"path\": \"/aapi/availability\"\n}"
+								},
+								{
+									"name": "204 DR. Does not work on that day",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/availability?doctorId={{doctorId_1}}&date=2025-09-09T14:30:00",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"availability"
+											],
+											"query": [
+												{
+													"key": "doctorId",
+													"value": "{{doctorId_1}}"
+												},
+												{
+													"key": "date",
+													"value": "{{appId_1_startDate_test}}",
+													"disabled": true
+												},
+												{
+													"key": "date",
+													"value": "2025-09-09T14:30:00"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 13:37:41 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Bulk Booking",
+					"item": [
+						{
+							"name": "Bulk Appointment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"bookingTimes\": [\r\n    \"2025-09-09T09:00:00\",\r\n    \"2025-09-09T09:40:00\",\r\n    \"2025-09-09T11:00:00\",\r\n    \"2025-09-10T15:30:00\"\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments/bulk",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments",
+										"bulk"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"bookingTimes\": [\r\n    \"2025-09-09T09:00:00\",\r\n    \"2025-09-09T09:40:00\",\r\n    \"2025-09-09T11:00:00\",\r\n    \"2025-09-10T15:30:00\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/bulk",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												"bulk"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 08:58:49 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 2952,\n        \"doctorId\": 955,\n        \"patientId\": 1952,\n        \"startDate\": \"2025-09-09T09:00:00\",\n        \"endDate\": \"2025-09-09T09:30:00\",\n        \"status\": \"BOOKED\",\n        \"notes\": null\n    },\n    {\n        \"id\": 2953,\n        \"doctorId\": 955,\n        \"patientId\": 1952,\n        \"startDate\": \"2025-09-09T09:40:00\",\n        \"endDate\": \"2025-09-09T10:10:00\",\n        \"status\": \"BOOKED\",\n        \"notes\": null\n    },\n    {\n        \"id\": 2954,\n        \"doctorId\": 955,\n        \"patientId\": 1952,\n        \"startDate\": \"2025-09-09T11:00:00\",\n        \"endDate\": \"2025-09-09T11:30:00\",\n        \"status\": \"BOOKED\",\n        \"notes\": null\n    },\n    {\n        \"id\": 2955,\n        \"doctorId\": 955,\n        \"patientId\": 1952,\n        \"startDate\": \"2025-09-10T15:30:00\",\n        \"endDate\": \"2025-09-10T16:00:00\",\n        \"status\": \"BOOKED\",\n        \"notes\": null\n    }\n]"
+								},
+								{
+									"name": "Slot Already Booked",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"doctorId\": {{doctorId_1}},\r\n  \"patientId\": {{patientId_1}},\r\n  \"bookingTimes\": [\r\n    \"2025-09-09T09:00:00\",\r\n    \"2025-09-09T09:40:00\",\r\n    \"2025-09-09T11:00:00\",\r\n    \"2025-09-10T15:30:00\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/bulk",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												"bulk"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 08:59:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T08:59:08.638+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"trace\": \"java.lang.RuntimeException: Slot already booked at 2025-09-09T09:00\\r\\n\\tat com.project.appointment_service.service.AppointmentService.bookAppointmentsInBulk(AppointmentService.java:137)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.bulkBookAppointments(AppointmentController.java:68)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Slot already booked at 2025-09-09T09:00\",\n    \"path\": \"/aapi/appointments/bulk\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Reschedule Appointment",
+					"item": [
+						{
+							"name": "Reschedule Appointment",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newDateTime\":\"2025-09-03T14:30:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{APPOINTMENT_SERVICE}}/appointments/reschedule/:id?newDateTime={{appId_1_startDate_test}}",
+									"host": [
+										"{{APPOINTMENT_SERVICE}}"
+									],
+									"path": [
+										"appointments",
+										"reschedule",
+										":id"
+									],
+									"query": [
+										{
+											"key": "newDateTime",
+											"value": "{{appId_1_startDate_test}}"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{appId_1_test}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"newDateTime\":\"2025-09-03T14:30:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/reschedule/:id?newDateTime={{appId_1_startDate_test}}",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												"reschedule",
+												":id"
+											],
+											"query": [
+												{
+													"key": "newDateTime",
+													"value": "{{appId_1_startDate_test}}"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 10:20:45 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1952,\n    \"doctorId\": 955,\n    \"patientId\": 1952,\n    \"startDate\": \"2025-09-03T14:30:00\",\n    \"endDate\": \"2025-09-03T15:00:00\",\n    \"status\": \"BOOKED\",\n    \"notes\": \"Follow-up\"\n}"
+								},
+								{
+									"name": "Appointment already Completed",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"newDateTime\":\"2025-09-03T14:30:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{APPOINTMENT_SERVICE}}/appointments/reschedule/:id?newDateTime={{appId_1_startDate_test}}",
+											"host": [
+												"{{APPOINTMENT_SERVICE}}"
+											],
+											"path": [
+												"appointments",
+												"reschedule",
+												":id"
+											],
+											"query": [
+												{
+													"key": "newDateTime",
+													"value": "{{appId_1_startDate_test}}"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "{{appId_1_test}}"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Sep 2025 10:22:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-09-08T10:22:42.136+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"trace\": \"org.springframework.web.server.ResponseStatusException: 400 BAD_REQUEST \\\"Only BOOKED appointments can be rescheduled. Current status: COMPLETED\\\"\\r\\n\\tat com.project.appointment_service.service.AppointmentService.rescheduleAppointment(AppointmentService.java:163)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)\\r\\n\\tat org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)\\r\\n\\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)\\r\\n\\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)\\r\\n\\tat com.project.appointment_service.service.AppointmentService$$SpringCGLIB$$0.rescheduleAppointment(<generated>)\\r\\n\\tat com.project.appointment_service.controller.AppointmentController.reschedule(AppointmentController.java:74)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\\r\\n\\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\\r\\n\\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\\r\\n\\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\\r\\n\\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\\r\\n\\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\\r\\n\\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\\r\\n\\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)\\r\\n\\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\\r\\n\\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\\r\\n\\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\\r\\n\\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\\r\\n\\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\\r\\n\\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\\r\\n\\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\\r\\n\\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\\r\\n\\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\\r\\n\\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\\r\\n\\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\\r\\n\\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\\r\\n\\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\\r\\n\\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\\r\\n\\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\\r\\n\\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\\r\\n\\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\\r\\n\\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\\r\\n\\tat java.base/java.lang.Thread.run(Thread.java:833)\\r\\n\",\n    \"message\": \"Only BOOKED appointments can be rescheduled. Current status: COMPLETED\",\n    \"path\": \"/aapi/appointments/reschedule/2152\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "http://localhost:9093/aapi/appointments/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXZhIiwiZXhwIjoxNzU2NjQxMjc2LCJpYXQiOjE3NTY0NjEyNzZ9.3gPYWFxPOSVJHcy2Ecs-i5MVwT5T6_jTVckxBhVPHOE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientName\":\"Patient 4\",\r\n    \"age\":40,\r\n    \"disease\":\"Disease 4\",\r\n    \"doctorId\":952\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9093/aapi/appointments/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"aapi",
+						"appointments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "52"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9093/aapi/appointments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"doctorId\": 1,\r\n  \"patientId\": 1,\r\n  \"startDate\": \"2025-09-03T15:30:00\",\r\n  \"endDate\": \"2025-09-03T16:30:00\",\r\n  \"status\": \"BOOKED\",\r\n  \"notes\": \"Follow-up\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9093/aapi/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"aapi",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9093/aapi/appointments/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9093/aapi/appointments/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9093",
+					"path": [
+						"aapi",
+						"appointments",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/dapi/doctors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Dr. Ayesha Khan\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"ayesha.khan@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/dapi/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"dapi",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/dapi/doctors/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Dr. Ayesha Khan PUT\",\r\n  \"specialty\": \"Cardiology\",\r\n  \"email\": \"ayesha.khan@example.com\",\r\n  \"phone\": \"+91-9876543210\",\r\n  \"locations\": [\"Mumbai\", \"Pune\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"09:00:00\",\r\n      \"endTime\": \"13:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"WEDNESDAY\",\r\n      \"startTime\": \"14:00:00\",\r\n      \"endTime\": \"18:00:00\"\r\n    },\r\n    {\r\n      \"dayOfWeek\": \"FRIDAY\",\r\n      \"startTime\": \"10:00:00\",\r\n      \"endTime\": \"15:00:00\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/dapi/doctors/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"dapi",
+						"doctors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/dapi/doctors/:id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"phone\": \"+91-98765432666\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/dapi/doctors/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"dapi",
+						"doctors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9091/dapi/doctors/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"phone\": \"+91-98765432666\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/dapi/doctors/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"dapi",
+						"doctors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

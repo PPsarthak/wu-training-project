@@ -25,8 +25,9 @@ public class PatientService {
 		return patientRepository.findAll();
 	}
 
-	public Patient getPatientById(Long id) {
-		return patientRepository.findById(id).orElse(null);
+	public Patient getPatientById(Long id) throws ResourceNotFoundException {
+		return patientRepository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException("Patient not found for this id :: " + id));
 	}
 
 	public Patient createPatient(Patient patient) {

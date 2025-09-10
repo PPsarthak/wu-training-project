@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +26,8 @@ public class DoctorService {
 	private WorkingHoursRepository workingHoursRepository;
 	
 	public Doctor getDoctorById(Long id) {
-		return doctorRepository.findById(id).orElse(null);
+		return doctorRepository.findById(id).orElseThrow(
+				() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "Doctor does not exists"));
 	}
 
 	public Doctor addDoctor(DoctorDTO dto) {
@@ -53,12 +56,9 @@ public class DoctorService {
     }
 	
 	public Doctor updateDoctor(Long id, DoctorDTO dto) {
-		Doctor existing = doctorRepository.findById(id).orElse(null);
-		if(null == existing) {
-			System.out.println("Null doctor");
-			return null;
-		}
-		
+		Doctor existing = doctorRepository.findById(id).orElseThrow(
+				() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Doctor does not exists"));
+
 		existing.setFullName(dto.getFullName());
         existing.setEmail(dto.getEmail());
         existing.setPhone(dto.getPhone());
@@ -81,12 +81,9 @@ public class DoctorService {
     }
 
     public Doctor patchDoctor(Long id, DoctorDTO dto) {
-    	Doctor existing = doctorRepository.findById(id).orElse(null);
-    	if(null == existing) {
-			System.out.println("Null doctor");
-			return null;
-		}
-    	
+    	Doctor existing = doctorRepository.findById(id).orElseThrow(
+				() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Doctor does not exists"));
+
     	if (dto.getFullName() != null) existing.setFullName(dto.getFullName());
         if (dto.getEmail() != null) existing.setEmail(dto.getEmail());
         if (dto.getPhone() != null) existing.setPhone(dto.getPhone());
@@ -114,8 +111,8 @@ public class DoctorService {
     }
        
     public void deleteDoctor(Long id) {
-        Doctor doctor = doctorRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Doctor not found with id: " + id));
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(
+        		() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "Doctor does not exists"));
         doctorRepository.delete(doctor);
     }
 	
